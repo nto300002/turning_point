@@ -1,6 +1,31 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'searchwords/new'
+  get 'searchwords/edit'
+  get 'searchwords/destroy'
+  get 'searchwords/index'
+  get 'turningpoints/new'
+  get 'turningpoints/edit'
+  get 'turningpoints/destroy'
+  get 'turningpoints/index'
+  get 'goals/new'
+  get 'goals/edit'
+  get 'goals/destroy'
+  get 'goals/index'
+  get 'users/new'
+  get 'users/edit'
+  get 'users/index'
+  get 'diaries/new'
+  get 'diaries/edit'
+  get 'diaries/show'
+  get 'diaries/index'
+  namespace :admin do
+    get 'users/new'
+    get 'users/edit'
+    get 'users/show'
+    get 'users/index'
+    resources :users
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'diaries#index'
+  resources :diaries
 end
