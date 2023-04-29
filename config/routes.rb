@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/top'
   get 'searchwords/new'
   get 'searchwords/edit'
   get 'searchwords/destroy'
@@ -26,6 +27,6 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  root to: 'diaries#index'
+  root to: 'home#top'
   resources :diaries
 end
